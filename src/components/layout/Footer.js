@@ -11,7 +11,15 @@ const Footer = () => {
       <div className="footer-wrapper">
         <div className="footer-grid">
           <div className="footer-column">
-            <h2 className="footer-logo">AI Solutions</h2>
+            <div className="footer-logo-container">
+              <div className="footer-logo-image">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="50" height="50">
+                  <path d="M0 0 L200 200 L0 400 Z" fill="#FF7843"/>
+                  <path d="M200 200 L400 0 L400 400 Z" fill="#909090"/>
+                </svg>
+              </div>
+              <h2 className="footer-logo">Neutrino Tech Systems</h2>
+            </div>
             <p className="footer-text">
               Transforming businesses through innovative AI solutions. We help organizations leverage the power of artificial intelligence to drive growth, efficiency, and competitive advantage.
             </p>
@@ -107,7 +115,7 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <p className="copyright-text">
-            © {currentYear} AI Solutions. All rights reserved.
+            © {currentYear} Neutrino Tech Systems. All rights reserved.
           </p>
           <div className="footer-bottom-links">
             <Link to="/privacy-policy" className="footer-bottom-link">Privacy Policy</Link>
