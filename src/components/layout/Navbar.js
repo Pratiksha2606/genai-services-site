@@ -79,6 +79,14 @@ const Navbar = () => {
           </li>
           <li className="nav-item">
             <Link
+              to="/insights"
+              className={`nav-link ${location.pathname === '/insights' ? 'active' : ''}`}
+            >
+              Insights
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
               to="/about"
               className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
             >
@@ -120,6 +128,11 @@ const Navbar = () => {
           <div className="mobile-nav-item">
             <Link to="/case-studies" className={`mobile-nav-link ${location.pathname === '/case-studies' ? 'active' : ''}`}>
               Case Studies
+            </Link>
+          </div>
+          <div className="mobile-nav-item">
+            <Link to="/insights" className={`mobile-nav-link ${location.pathname === '/insights' ? 'active' : ''}`}>
+              Insights
             </Link>
           </div>
           <div className="mobile-nav-item">

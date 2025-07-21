@@ -3,9 +3,8 @@
 }
 
 .solutions-hero {
-  background: linear-gradient(135deg, #001F3F 0%, #0066CC 100%);
   padding: 8rem 0;
-  color: #FFFFFF;
+  color: var(--text-primary);
   position: relative;
   overflow: hidden;
 }
@@ -60,13 +59,13 @@
 .solutions-intro-title {
   font-size: 3.6rem;
   font-weight: 700;
-  color: #001F3F;
+  color: var(--text-primary);
   margin-bottom: 2rem;
 }
 
 .solutions-intro-description {
   font-size: 1.8rem;
-  color: #666666;
+  color: var(--text-secondary);
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
@@ -80,7 +79,7 @@
 }
 
 .solution-card {
-  background-color: #FFFFFF;
+  background-color: var(--background-darker);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -98,7 +97,7 @@
 
 .solution-image {
   height: 200px;
-  background: linear-gradient(135deg, #0066CC 0%, #00AEEF 100%);
+  background: linear-gradient(135deg, var(--wave-dark-blue) 0%, var(--wave-medium-blue) 70%, var(--wave-light-blue) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,7 +119,7 @@
 
 .solution-image-icon {
   font-size: 5rem;
-  color: #FFFFFF;
+  color: var(--primary-color);
   position: relative;
   z-index: 1;
 }
@@ -145,13 +144,13 @@
 .solution-title {
   font-size: 2.2rem;
   font-weight: 600;
-  color: #001F3F;
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
 }
 
 .solution-description {
   font-size: 1.6rem;
-  color: #666666;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 2rem;
   flex-grow: 1;
@@ -160,7 +159,7 @@
 .solution-link {
   display: inline-flex;
   align-items: center;
-  color: #0066CC;
+  color: var(--primary-color);
   font-size: 1.6rem;
   font-weight: 500;
   text-decoration: none;
@@ -168,7 +167,7 @@
 }
 
 .solution-link:hover {
-  color: #00AEEF;
+  color: var(--accent-color);
 }
 
 .solution-link-icon {
@@ -181,7 +180,7 @@
 }
 
 .healthcare-section {
-  background-color: #F5F7FA;
+  background-color: var(--background-darker);
   padding: 8rem 0;
 }
 
@@ -199,13 +198,13 @@
 .healthcare-title {
   font-size: 3.6rem;
   font-weight: 700;
-  color: #001F3F;
+  color: var(--text-primary);
   margin-bottom: 2rem;
 }
 
 .healthcare-description {
   font-size: 1.8rem;
-  color: #666666;
+  color: var(--text-secondary);
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
@@ -218,7 +217,7 @@
 }
 
 .healthcare-card {
-  background-color: #FFFFFF;
+  background-color: var(--background-darker);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -234,7 +233,7 @@
 
 .healthcare-image {
   height: 250px;
-  background: linear-gradient(135deg, #001F3F 0%, #0066CC 100%);
+  background: linear-gradient(135deg, var(--wave-dark-blue) 0%, var(--wave-medium-blue) 70%, var(--wave-light-blue) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -256,7 +255,7 @@
 
 .healthcare-image-icon {
   font-size: 6rem;
-  color: #FFFFFF;
+  color: var(--primary-color);
   position: relative;
   z-index: 1;
 }
@@ -278,13 +277,13 @@
 .healthcare-card-title {
   font-size: 2.4rem;
   font-weight: 600;
-  color: #001F3F;
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
 }
 
 .healthcare-card-description {
   font-size: 1.6rem;
-  color: #666666;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 2rem;
 }
@@ -300,7 +299,7 @@
 }
 
 .healthcare-feature-icon {
-  color: #00AEEF;
+  color: var(--primary-color);
   margin-right: 1rem;
   font-size: 1.6rem;
   min-width: 1.6rem;
@@ -308,13 +307,13 @@
 
 .healthcare-feature-text {
   font-size: 1.6rem;
-  color: #333333;
+  color: var(--text-primary);
 }
 
 .healthcare-link {
   display: inline-flex;
   align-items: center;
-  color: #0066CC;
+  color: var(--primary-color);
   font-size: 1.6rem;
   font-weight: 500;
   text-decoration: none;
@@ -322,7 +321,7 @@
 }
 
 .healthcare-link:hover {
-  color: #00AEEF;
+  color: var(--accent-color);
 }
 
 .healthcare-link-icon {
@@ -336,7 +335,7 @@
 
 .cta-section {
   padding: 8rem 0;
-  background: linear-gradient(135deg, #0066CC 0%, #00AEEF 100%);
+  background: linear-gradient(135deg, var(--wave-dark-blue) 0%, var(--wave-medium-blue) 70%, var(--wave-light-blue) 100%);
   text-align: center;
 }
 
@@ -349,21 +348,21 @@
 .cta-title {
   font-size: 3.6rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--text-primary);
   margin-bottom: 2rem;
 }
 
 .cta-description {
   font-size: 1.8rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-secondary);
   margin-bottom: 4rem;
   line-height: 1.6;
 }
 
 .cta-button {
   display: inline-block;
-  background-color: #FFFFFF;
-  color: #0066CC;
+  background-color: var(--primary-color);
+  color: var(--text-dark);
   border: none;
   border-radius: 4px;
   padding: 1.5rem 4rem;
@@ -375,7 +374,8 @@
 }
 
 .cta-button:hover {
-  background-color: #F5F7FA;
+  background-color: var(--primary-color);
+  opacity: 0.9;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }

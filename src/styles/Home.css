@@ -6,9 +6,11 @@
   position: relative;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #001F3F 0%, #0066CC 100%);
   overflow: hidden;
 }
+
+/* We're now using styled-components for most of the styling,
+   but keeping some CSS classes for flexibility */
 
 .hero-overlay {
   position: absolute;
@@ -41,14 +43,14 @@
 .hero-title {
   font-size: 5rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--text-primary);
   margin-bottom: 2rem;
   line-height: 1.2;
 }
 
 .hero-subtitle {
   font-size: 2rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-secondary);
   margin-bottom: 3rem;
   line-height: 1.5;
 }
@@ -59,8 +61,8 @@
 }
 
 .hero-button-primary {
-  background-color: #00AEEF;
-  color: #FFFFFF;
+  background-color: var(--primary-color);
+  color: var(--text-dark);
   border: none;
   border-radius: 4px;
   padding: 1.2rem 3rem;
@@ -72,15 +74,16 @@
 }
 
 .hero-button-primary:hover {
-  background-color: #0099CC;
+  background-color: var(--primary-color);
+  opacity: 0.9;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .hero-button-secondary {
   background-color: transparent;
-  color: #FFFFFF;
-  border: 2px solid #FFFFFF;
+  color: var(--text-primary);
+  border: 2px solid var(--primary-color);
   border-radius: 4px;
   padding: 1.2rem 3rem;
   font-size: 1.6rem;
@@ -91,7 +94,8 @@
 }
 
 .hero-button-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--primary-color);
+  color: var(--text-dark);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
@@ -113,20 +117,20 @@
 /* Features Section */
 .features-section {
   padding: 10rem 0;
-  background-color: #F5F7FA;
+  background-color: var(--background-darker);
 }
 
 .section-title {
   font-size: 3.6rem;
   font-weight: 700;
-  color: #001F3F;
+  color: var(--text-primary);
   text-align: center;
   margin-bottom: 2rem;
 }
 
 .section-subtitle {
   font-size: 1.8rem;
-  color: #666666;
+  color: var(--text-secondary);
   text-align: center;
   max-width: 700px;
   margin: 0 auto 6rem;
@@ -142,7 +146,7 @@
 }
 
 .feature-card {
-  background-color: #FFFFFF;
+  background-color: var(--background-darker);
   border-radius: 8px;
   padding: 3rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -156,27 +160,27 @@
 
 .feature-icon {
   font-size: 4rem;
-  color: #0066CC;
+  color: var(--primary-color);
   margin-bottom: 2rem;
 }
 
 .feature-title {
   font-size: 2.2rem;
   font-weight: 600;
-  color: #001F3F;
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
 }
 
 .feature-description {
   font-size: 1.6rem;
-  color: #666666;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
 /* Solutions Section */
 .solutions-section {
   padding: 10rem 0;
-  background-color: #FFFFFF;
+  background-color: var(--background-dark);
 }
 
 .solutions-container {
@@ -210,13 +214,13 @@
 .solutions-title {
   font-size: 3.6rem;
   font-weight: 700;
-  color: #001F3F;
+  color: var(--text-primary);
   margin-bottom: 2rem;
 }
 
 .solutions-description {
   font-size: 1.8rem;
-  color: #666666;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 3rem;
 }
@@ -235,20 +239,20 @@
 
 .solutions-list-icon {
   font-size: 2rem;
-  color: #00AEEF;
+  color: var(--primary-color);
   margin-right: 1.5rem;
   min-width: 2rem;
 }
 
 .solutions-list-text {
   font-size: 1.6rem;
-  color: #333333;
+  color: var(--text-primary);
 }
 
 .solutions-button {
   display: inline-block;
-  background-color: #0066CC;
-  color: #FFFFFF;
+  background-color: var(--primary-color);
+  color: var(--text-dark);
   border: none;
   border-radius: 4px;
   padding: 1.2rem 3rem;
@@ -260,7 +264,8 @@
 }
 
 .solutions-button:hover {
-  background-color: #00AEEF;
+  background-color: var(--primary-color);
+  opacity: 0.9;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
@@ -268,7 +273,7 @@
 /* Testimonials Section */
 .testimonials-section {
   padding: 10rem 0;
-  background-color: #F5F7FA;
+  background-color: var(--background-darker);
 }
 
 .testimonials-container {
@@ -284,7 +289,7 @@
 }
 
 .testimonial-card {
-  background-color: #FFFFFF;
+  background-color: var(--background-darker);
   border-radius: 8px;
   padding: 3rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -298,7 +303,7 @@
 
 .testimonial-content {
   font-size: 1.6rem;
-  color: #666666;
+  color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 2rem;
   position: relative;
@@ -307,7 +312,7 @@
 .testimonial-content::before {
   content: '"';
   font-size: 5rem;
-  color: #0066CC;
+  color: var(--primary-color);
   opacity: 0.2;
   position: absolute;
   top: -2rem;
@@ -335,19 +340,19 @@
 .testimonial-author-name {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #001F3F;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .testimonial-author-title {
   font-size: 1.4rem;
-  color: #666666;
+  color: var(--text-secondary);
 }
 
 /* CTA Section */
 .cta-section {
   padding: 8rem 0;
-  background: linear-gradient(135deg, #0066CC 0%, #00AEEF 100%);
+  background: linear-gradient(135deg, var(--wave-dark-blue) 0%, var(--wave-medium-blue) 50%, var(--wave-light-blue) 100%);
   text-align: center;
 }
 
@@ -360,21 +365,21 @@
 .cta-title {
   font-size: 3.6rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--text-primary);
   margin-bottom: 2rem;
 }
 
 .cta-description {
   font-size: 1.8rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-secondary);
   margin-bottom: 4rem;
   line-height: 1.6;
 }
 
 .cta-button {
   display: inline-block;
-  background-color: #FFFFFF;
-  color: #0066CC;
+  background-color: var(--primary-color);
+  color: var(--text-dark);
   border: none;
   border-radius: 4px;
   padding: 1.5rem 4rem;
@@ -386,7 +391,8 @@
 }
 
 .cta-button:hover {
-  background-color: #F5F7FA;
+  background-color: var(--primary-color);
+  opacity: 0.9;
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }

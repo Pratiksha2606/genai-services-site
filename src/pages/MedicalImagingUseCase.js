@@ -1,27 +1,42 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import styled from 'styled-components';
 import { FaArrowRight, FaImage, FaCheckCircle, FaChartLine, FaRobot, FaServer, FaShieldAlt, FaCloudUploadAlt, FaMobileAlt, FaBrain, FaDna, FaHeartbeat } from 'react-icons/fa';
 import '../styles/UseCase.css';
+import WaveBackground from '../components/ui/WaveBackground';
+import GradientText from '../components/ui/GradientText';
+import Card from '../components/ui/Card';
+import Button from '../components/ui/Button';
 
 const MedicalImagingUseCase = () => {
   return (
     <div className="use-case-page">
-      {/* Hero Section */}
+      {/* Hero Section with Wave Background */}
       <section className="use-case-hero">
-        <div className="use-case-hero-overlay"></div>
-        <div className="use-case-hero-container">
-          <div className="use-case-breadcrumb">
-            <Link to="/" className="use-case-breadcrumb-link">Home</Link>
-            <span className="use-case-breadcrumb-separator">/</span>
-            <Link to="/solutions" className="use-case-breadcrumb-link">Solutions</Link>
-            <span className="use-case-breadcrumb-separator">/</span>
-            <span className="use-case-breadcrumb-current">Medical Imaging Analysis</span>
+        <WaveBackground>
+          <div className="use-case-hero-container">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="use-case-breadcrumb">
+                <Link to="/" className="use-case-breadcrumb-link">Home</Link>
+                <span className="use-case-breadcrumb-separator">/</span>
+                <Link to="/solutions" className="use-case-breadcrumb-link">Solutions</Link>
+                <span className="use-case-breadcrumb-separator">/</span>
+                <span className="use-case-breadcrumb-current">Medical Imaging Analysis</span>
+              </div>
+              <h1 className="use-case-hero-title">
+                AI-Powered <GradientText fontWeight="700">Medical Imaging Analysis</GradientText>
+              </h1>
+              <p className="use-case-hero-description">
+                Our advanced AI solutions for medical imaging help radiologists and clinicians detect abnormalities with greater accuracy and efficiency, improving diagnostic capabilities and patient outcomes.
+              </p>
+            </motion.div>
           </div>
-          <h1 className="use-case-hero-title">AI-Powered Medical Imaging Analysis</h1>
-          <p className="use-case-hero-description">
-            Our advanced AI solutions for medical imaging help radiologists and clinicians detect abnormalities with greater accuracy and efficiency, improving diagnostic capabilities and patient outcomes.
-          </p>
-        </div>
+        </WaveBackground>
       </section>
 
       {/* Main Content */}
@@ -38,11 +53,17 @@ const MedicalImagingUseCase = () => {
                   <p>
                     Our AI-powered Medical Imaging Analysis solution leverages deep learning algorithms to assist healthcare professionals in interpreting medical images across various modalities, including X-rays, CT scans, MRIs, and ultrasounds. By automating the detection and classification of abnormalities, our solution enhances diagnostic accuracy, reduces interpretation time, and helps prioritize urgent cases.
                   </p>
-                  <div className="use-case-image-container">
+                  <motion.div
+                    className="use-case-image-container"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                  >
                     <div className="use-case-image">
                       <FaImage className="use-case-image-icon" />
                     </div>
-                  </div>
+                  </motion.div>
                   <p>
                     The system is designed to integrate seamlessly with existing PACS (Picture Archiving and Communication System) and RIS (Radiology Information System) infrastructure, ensuring minimal disruption to established workflows while providing maximum value to healthcare providers and patients.
                   </p>
@@ -199,21 +220,29 @@ const MedicalImagingUseCase = () => {
                 </ul>
               </div>
 
-              <div className="use-case-cta">
-                <h3 className="use-case-cta-title">Ready to Transform Your Imaging Capabilities?</h3>
+              <Card className="use-case-cta">
+                <h3 className="use-case-cta-title">Ready to <GradientText>Transform</GradientText> Your Imaging Capabilities?</h3>
                 <p className="use-case-cta-text">Contact us today to schedule a demonstration and discover how our AI-powered Medical Imaging Analysis solution can benefit your organization.</p>
-                <Link to="/contact" className="use-case-cta-button">Request a Demo</Link>
-              </div>
+                <Button to="/contact" variant="primary" size="large">Request a Demo</Button>
+              </Card>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Related Use Cases */}
+      {/* Related Use Cases with Wave Background */}
       <section className="related-use-cases">
-        <div className="related-use-cases-container">
-          <h2 className="related-use-cases-title">Related Healthcare AI Solutions</h2>
-          <div className="related-use-cases-grid">
+        <WaveBackground>
+          <div className="related-use-cases-container">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="related-use-cases-title">Related Healthcare <GradientText>AI Solutions</GradientText></h2>
+            </motion.div>
+            <div className="related-use-cases-grid">
             <Link to="/solutions/predictive-diagnostics" className="related-use-case-card">
               <div className="related-use-case-image">
                 <FaBrain className="related-use-case-image-icon" />
@@ -258,8 +287,9 @@ const MedicalImagingUseCase = () => {
                 </div>
               </div>
             </Link>
+            </div>
           </div>
-        </div>
+        </WaveBackground>
       </section>
     </div>
   );
