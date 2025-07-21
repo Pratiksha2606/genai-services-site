@@ -16,6 +16,7 @@ import PatientMonitoringUseCase from './pages/PatientMonitoringUseCase';
 import HospitalOperationsUseCase from './pages/HospitalOperationsUseCase';
 import ClinicalDecisionSupportUseCase from './pages/ClinicalDecisionSupportUseCase';
 import DarkModeToggle from './components/ui/DarkModeToggle';
+import ChatBot from './components/ui/ChatBot';
 import ScrollToTop from './components/ui/ScrollToTop';
 import GlobalStyles from './styles/GlobalStyles';
 
@@ -44,6 +45,7 @@ function App() {
         <Route path="*" element={<div style={{ padding: '100px 20px', textAlign: 'center' }}>Page Not Found</div>} />
       </Routes>
       <Footer />
+      <ChatBot />
     </Router>
   );
 }
