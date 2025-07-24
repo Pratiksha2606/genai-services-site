@@ -4,6 +4,8 @@ const GlobalStyles = createGlobalStyle`
   :root {
     /* New color theme inspired by the Neutrino image */
     --primary-color: #FF7846; /* Coral/Orange accent */
+    --primary-color-rgb: 255, 120, 70; /* RGB values for primary color */
+    --primary-color-dark: #E56335; /* Darker version of primary color for hover states */
     --secondary-color: #0A1A2F; /* Deep blue */
     --accent-color: #4ECDC4; /* Teal accent */
     
@@ -111,42 +113,43 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     font-weight: 600;
     line-height: 1.2;
     color: var(--text-primary);
   }
-
+  
   h1 {
-    font-size: 4.2rem;
-  }
-
-  h2 {
     font-size: 3.6rem;
   }
-
-  h3 {
+  
+  h2 {
     font-size: 3rem;
   }
-
-  h4 {
+  
+  h3 {
     font-size: 2.4rem;
   }
-
-  h5 {
+  
+  h4 {
     font-size: 2rem;
   }
-
-  h6 {
+  
+  h5 {
     font-size: 1.8rem;
+  }
+  
+  h6 {
+    font-size: 1.6rem;
   }
 
   p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
   }
-
+  
   section {
-    padding: 8rem 0;
+    padding: 6rem 0;
   }
 
   .container {
@@ -160,19 +163,19 @@ const GlobalStyles = createGlobalStyle`
     html {
       font-size: 55%;
     }
-
+  
     section {
-      padding: 6rem 0;
+      padding: 4rem 0;
     }
   }
-
+  
   @media (max-width: 576px) {
     html {
       font-size: 50%;
     }
-
+  
     section {
-      padding: 4rem 0;
+      padding: 3rem 0;
     }
   }
 
@@ -321,6 +324,64 @@ const GlobalStyles = createGlobalStyle`
     background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
+  }
+  
+  /* Light theme specific styles */
+  body.light-theme {
+    /* Adjust card styles for light theme */
+    .card {
+      background: var(--background-darker);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    /* Adjust button styles for light theme */
+    .btn-secondary {
+      color: var(--text-primary);
+      border: 2px solid var(--primary-color);
+    }
+    
+    /* Adjust wave background for light theme */
+    .wave-bg::before {
+      background: linear-gradient(135deg, var(--wave-dark-blue) 0%, var(--wave-medium-blue) 50%, var(--wave-light-blue) 100%);
+      opacity: 0.7;
+    }
+    
+    /* Improve contrast for text on light backgrounds */
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--text-primary);
+    }
+    
+    /* Adjust form elements for light theme */
+    input, select, textarea {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background-color: white;
+      color: var(--text-primary);
+    }
+    
+    /* Adjust links for light theme */
+    a {
+      color: var(--primary-color);
+    }
+    
+    a:hover {
+      color: var(--primary-color-dark);
+    }
+  }
+  
+  /* Dark theme specific styles */
+  body.dark-theme {
+    /* These are already the default styles, but explicitly defining them for clarity */
+    .card {
+      background: var(--background-darker);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    input, select, textarea {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: var(--background-dark);
+      color: var(--text-primary);
+    }
   }
 `;
 

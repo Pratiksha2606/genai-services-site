@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
-import { FaArrowRight, FaImage, FaCheckCircle, FaChartLine, FaRobot, FaServer, FaShieldAlt, FaCloudUploadAlt, FaMobileAlt, FaBrain, FaDna, FaHeartbeat } from 'react-icons/fa';
+import { FaArrowRight, FaFileAlt, FaCheckCircle, FaChartLine, FaRobot, FaServer, FaShieldAlt, FaCloudUploadAlt, FaMobileAlt, FaBrain, FaMicrophone, FaUserMd, FaHospital } from 'react-icons/fa';
 import '../styles/UseCase.css';
 import WaveBackground from '../components/ui/WaveBackground';
 import GradientText from '../components/ui/GradientText';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 
-const MedicalImagingUseCase = () => {
+
+const PriorAuthorizationUseCase = () => {
+
   return (
     <div className="use-case-page">
       {/* Hero Section with Wave Background */}
@@ -26,13 +27,13 @@ const MedicalImagingUseCase = () => {
                 <span className="use-case-breadcrumb-separator">/</span>
                 <Link to="/solutions" className="use-case-breadcrumb-link">Solutions</Link>
                 <span className="use-case-breadcrumb-separator">/</span>
-                <span className="use-case-breadcrumb-current">Medical Imaging Analysis</span>
+                <span className="use-case-breadcrumb-current">Prior Authorization</span>
               </div>
               <h1 className="use-case-hero-title">
-                AI-Powered <GradientText fontWeight="700">Medical Imaging Analysis</GradientText>
+                AI-Powered <GradientText fontWeight="700">Prior Authorization</GradientText>
               </h1>
               <p className="use-case-hero-description">
-                AI solutions helping radiologists detect abnormalities with greater accuracy and efficiency, improving diagnostics and patient outcomes.
+                AI solution streamlining prior authorization, reducing burden, accelerating care, and improving outcomes.
               </p>
             </motion.div>
           </div>
@@ -48,10 +49,10 @@ const MedicalImagingUseCase = () => {
                 <h2 className="use-case-section-title">Overview</h2>
                 <div className="use-case-section-content">
                   <p>
-                    Medical imaging provides essential visual information for diagnosis, but increasing volume and complexity create challenges for radiologists.
+                    Prior authorization requires providers to obtain insurer approval before treatments are covered, often delaying care and increasing costs.
                   </p>
                   <p>
-                    Our AI solution assists in interpreting X-rays, CT scans, MRIs, and ultrasounds. It automates abnormality detection, enhances accuracy, reduces interpretation time, and prioritizes urgent cases.
+                    Our AI solution uses NLP, machine learning, and automation to streamline this process. It analyzes documentation, policies, and approval patterns to predict requirements, pre-populate forms, and automatically approve straightforward cases.
                   </p>
                   <motion.div
                     className="use-case-image-container"
@@ -61,31 +62,55 @@ const MedicalImagingUseCase = () => {
                     viewport={{ once: true }}
                   >
                     <div className="use-case-image use-case-custom-image">
-                      <div className="medical-imaging-visual">
-                        <div className="scan-display">
-                          <div className="scan-screen">
-                            <div className="scan-grid">
-                              <div className="scan-highlight pulse-highlight"></div>
-                            </div>
+                      <div className="prior-auth-visual">
+                        <div className="document-stack">
+                          <div className="document doc1">
+                            <div className="doc-header"></div>
+                            <div className="doc-line"></div>
+                            <div className="doc-line"></div>
+                            <div className="doc-line"></div>
                           </div>
-                          <div className="scan-controls">
-                            <div className="control-button"></div>
-                            <div className="control-button"></div>
-                            <div className="control-button"></div>
+                          <div className="document doc2">
+                            <div className="doc-header"></div>
+                            <div className="doc-line"></div>
+                            <div className="doc-line"></div>
+                          </div>
+                          <div className="document doc3">
+                            <div className="doc-header"></div>
+                            <div className="doc-line"></div>
+                            <div className="doc-line"></div>
+                            <div className="doc-line"></div>
                           </div>
                         </div>
-                        <div className="ai-overlay">
-                          <div className="ai-detection"></div>
-                          <div className="ai-badge">
-                            <FaBrain style={{ color: 'var(--primary-color)', fontSize: '1.8rem' }} />
-                          </div>
+                        <div className="approval-stamp">
+                          <FaCheckCircle style={{ color: 'var(--primary-color)', fontSize: '2.5rem' }} />
+                        </div>
+                        <div className="processing-arrow">
+                          <FaArrowRight style={{ color: 'white', fontSize: '2rem' }} />
                         </div>
                       </div>
                     </div>
                   </motion.div>
                   <p>
-                    The system integrates with existing PACS and RIS infrastructure, ensuring minimal workflow disruption while maximizing value.
+                    The system integrates with EHR systems and payer portals, minimizing workflow disruption while maximizing value.
                   </p>
+                </div>
+              </div>
+
+              <div className="use-case-section">
+                <h2 className="use-case-section-title">Interactive Demo</h2>
+                <div className="use-case-section-content">
+                  <p>See our solution in action:</p>
+                  
+                  <Button
+                    to="/solutions/prior-authorization/demo"
+                    variant="primary"
+                    style={{ marginBottom: '2rem' }}
+                  >
+                    Show Demo
+                  </Button>
+                  
+                  <p>Experience the streamlined authorization process firsthand.</p>
                 </div>
               </div>
 
@@ -94,28 +119,28 @@ const MedicalImagingUseCase = () => {
                 <div className="use-case-section-content">
                   <p>Key capabilities:</p>
                   <ul>
-                    <li><strong>Abnormality Detection:</strong> Identifies potential nodules, masses, fractures, and other findings.</li>
-                    <li><strong>Quantitative Analysis:</strong> Provides measurements of anatomical structures and features.</li>
-                    <li><strong>Prioritization:</strong> Flags critical findings for immediate attention.</li>
-                    <li><strong>Comparative Analysis:</strong> Compares current images with prior studies to track changes.</li>
-                    <li><strong>Structured Reporting:</strong> Generates preliminary reports with findings and recommendations.</li>
-                    <li><strong>Quality Assurance:</strong> Ensures image quality meets standards.</li>
+                    <li><strong>Form Completion:</strong> Extracts information from documentation to pre-populate forms.</li>
+                    <li><strong>Policy Matching:</strong> Matches policies with clinical data to determine eligibility.</li>
+                    <li><strong>Predictive Approvals:</strong> Predicts outcomes based on patterns and guidelines.</li>
+                    <li><strong>Automated Submissions:</strong> Submits requests to payer portals and tracks status.</li>
+                    <li><strong>Status Tracking:</strong> Provides real-time updates and identifies potential issues.</li>
+                    <li><strong>Appeals Assistance:</strong> Generates evidence-based appeals for denied authorizations.</li>
                   </ul>
                 </div>
               </div>
 
               <div className="use-case-stats">
                 <div className="use-case-stat">
-                  <div className="use-case-stat-value">99.2%</div>
-                  <div className="use-case-stat-label">Detection Accuracy</div>
+                  <div className="use-case-stat-value">85%</div>
+                  <div className="use-case-stat-label">Reduction in Processing Time</div>
                 </div>
                 <div className="use-case-stat">
-                  <div className="use-case-stat-value">43%</div>
-                  <div className="use-case-stat-label">Reduction in Reading Time</div>
+                  <div className="use-case-stat-value">92%</div>
+                  <div className="use-case-stat-label">Accuracy Rate</div>
                 </div>
                 <div className="use-case-stat">
-                  <div className="use-case-stat-value">28%</div>
-                  <div className="use-case-stat-label">Increase in Diagnostic Confidence</div>
+                  <div className="use-case-stat-value">$1.2M</div>
+                  <div className="use-case-stat-label">Annual Savings for Average Hospital</div>
                 </div>
               </div>
 
@@ -124,10 +149,10 @@ const MedicalImagingUseCase = () => {
                 <div className="use-case-section-content">
                   <p>Implementation process:</p>
                   <ol>
-                    <li><strong>Assessment:</strong> Evaluate your imaging infrastructure and needs.</li>
-                    <li><strong>Customization:</strong> Tailor solution to your requirements and integrate with existing systems.</li>
-                    <li><strong>Training:</strong> Fine-tune AI models using your historical imaging data.</li>
-                    <li><strong>Validation:</strong> Verify performance against radiologist interpretations.</li>
+                    <li><strong>Assessment:</strong> Evaluate your current processes and pain points.</li>
+                    <li><strong>Customization:</strong> Tailor solution to your needs and integrate with existing systems.</li>
+                    <li><strong>Training:</strong> Train AI models using your historical data.</li>
+                    <li><strong>Validation:</strong> Verify performance against manual processes.</li>
                     <li><strong>Deployment:</strong> Implement in phases, starting with pilot program.</li>
                     <li><strong>Monitoring:</strong> Continuously optimize performance.</li>
                   </ol>
@@ -136,34 +161,34 @@ const MedicalImagingUseCase = () => {
 
               <div className="use-case-quote">
                 <p className="use-case-quote-text">
-                  "The AI system transformed our radiology department with reduced interpretation time and increased diagnostic confidence. It has helped identify critical findings that might have been missed, potentially saving lives."
+                  "The AI system transformed our practice. What took hours now takes minutes, allowing staff to focus on patient care. The reduction in delays has improved satisfaction and outcomes."
                 </p>
-                <div className="use-case-quote-author">Dr. Sarah Johnson</div>
-                <div className="use-case-quote-position">Chief of Radiology, MMC</div>
+                <div className="use-case-quote-author">Dr. Michael Chen</div>
+                <div className="use-case-quote-position">CMO, Westside Medical</div>
               </div>
 
               <div className="use-case-section">
                 <h2 className="use-case-section-title">Benefits</h2>
                 <div className="use-case-section-content">
-                  <p><strong>For Radiologists:</strong></p>
+                  <p><strong>For Healthcare Providers:</strong></p>
                   <ul>
-                    <li>Reduced interpretation time</li>
-                    <li>Enhanced diagnostic accuracy</li>
-                    <li>Prioritization of urgent cases</li>
+                    <li>Reduced administrative burden</li>
+                    <li>Faster approvals and reduced delays</li>
+                    <li>Decreased denials and improved revenue</li>
                   </ul>
                   
-                  <p><strong>For Healthcare Organizations:</strong></p>
+                  <p><strong>For Payers:</strong></p>
                   <ul>
-                    <li>Improved efficiency and resource use</li>
-                    <li>Reduced turnaround times</li>
-                    <li>Enhanced quality of care</li>
+                    <li>Streamlined processes and reduced costs</li>
+                    <li>Consistent application of policies</li>
+                    <li>Better utilization management</li>
                   </ul>
                   
                   <p><strong>For Patients:</strong></p>
                   <ul>
-                    <li>Faster diagnosis and treatment</li>
-                    <li>Fewer repeat imaging needs</li>
-                    <li>Better treatment planning</li>
+                    <li>Faster access to care</li>
+                    <li>Reduced out-of-pocket expenses</li>
+                    <li>Better health outcomes</li>
                   </ul>
                 </div>
               </div>
@@ -175,27 +200,27 @@ const MedicalImagingUseCase = () => {
                 <ul className="use-case-highlights">
                   <li className="use-case-highlight">
                     <FaCheckCircle className="use-case-highlight-icon" />
-                    <div className="use-case-highlight-text">99.2% accuracy in detecting abnormalities</div>
+                    <div className="use-case-highlight-text">85% reduction in prior authorization processing time</div>
                   </li>
                   <li className="use-case-highlight">
                     <FaCheckCircle className="use-case-highlight-icon" />
-                    <div className="use-case-highlight-text">43% reduction in image reading time</div>
+                    <div className="use-case-highlight-text">92% accuracy in predicting authorization outcomes</div>
                   </li>
                   <li className="use-case-highlight">
                     <FaCheckCircle className="use-case-highlight-icon" />
-                    <div className="use-case-highlight-text">Seamless integration with existing PACS/RIS</div>
+                    <div className="use-case-highlight-text">Seamless integration with major EHR systems</div>
                   </li>
                   <li className="use-case-highlight">
                     <FaCheckCircle className="use-case-highlight-icon" />
-                    <div className="use-case-highlight-text">Support for multiple imaging modalities</div>
+                    <div className="use-case-highlight-text">Direct connectivity to major payer portals</div>
                   </li>
                   <li className="use-case-highlight">
                     <FaCheckCircle className="use-case-highlight-icon" />
-                    <div className="use-case-highlight-text">Automated structured reporting</div>
+                    <div className="use-case-highlight-text">Automated appeals generation with 65% success rate</div>
                   </li>
                   <li className="use-case-highlight">
                     <FaCheckCircle className="use-case-highlight-icon" />
-                    <div className="use-case-highlight-text">Continuous learning and improvement</div>
+                    <div className="use-case-highlight-text">$1.2M average annual savings per hospital</div>
                   </li>
                 </ul>
               </div>
@@ -205,19 +230,19 @@ const MedicalImagingUseCase = () => {
                 <ul className="use-case-technologies">
                   <li className="use-case-technology">
                     <FaBrain className="use-case-technology-icon" />
-                    <div className="use-case-technology-text">Deep Learning Neural Networks</div>
+                    <div className="use-case-technology-text">Natural Language Processing</div>
                   </li>
                   <li className="use-case-technology">
                     <FaRobot className="use-case-technology-icon" />
-                    <div className="use-case-technology-text">Computer Vision Algorithms</div>
+                    <div className="use-case-technology-text">Machine Learning Algorithms</div>
                   </li>
                   <li className="use-case-technology">
                     <FaChartLine className="use-case-technology-icon" />
-                    <div className="use-case-technology-text">Advanced Data Analytics</div>
+                    <div className="use-case-technology-text">Predictive Analytics</div>
                   </li>
                   <li className="use-case-technology">
                     <FaServer className="use-case-technology-icon" />
-                    <div className="use-case-technology-text">Scalable Cloud Infrastructure</div>
+                    <div className="use-case-technology-text">Secure Cloud Infrastructure</div>
                   </li>
                   <li className="use-case-technology">
                     <FaShieldAlt className="use-case-technology-icon" />
@@ -225,18 +250,18 @@ const MedicalImagingUseCase = () => {
                   </li>
                   <li className="use-case-technology">
                     <FaCloudUploadAlt className="use-case-technology-icon" />
-                    <div className="use-case-technology-text">DICOM Integration</div>
+                    <div className="use-case-technology-text">API Integration Framework</div>
                   </li>
                   <li className="use-case-technology">
                     <FaMobileAlt className="use-case-technology-icon" />
-                    <div className="use-case-technology-text">Mobile Viewing Capabilities</div>
+                    <div className="use-case-technology-text">Mobile Status Tracking</div>
                   </li>
                 </ul>
               </div>
 
               <Card className="use-case-cta">
-                <h3 className="use-case-cta-title">Ready to <GradientText>Transform</GradientText> Imaging?</h3>
-                <p className="use-case-cta-text">Contact us to schedule a demo of our AI-powered imaging solution.</p>
+                <h3 className="use-case-cta-title">Ready to <GradientText>Transform</GradientText> Authorization?</h3>
+                <p className="use-case-cta-text">Contact us to schedule a demo of our AI-powered solution.</p>
                 <Button to="/contact" variant="primary" size="large">Request a Demo</Button>
               </Card>
             </div>
@@ -257,14 +282,14 @@ const MedicalImagingUseCase = () => {
               <h2 className="related-use-cases-title">Related <GradientText>AI Solutions</GradientText></h2>
             </motion.div>
             <div className="related-use-cases-grid">
-            <Link to="/solutions/predictive-diagnostics" className="related-use-case-card">
+            <Link to="/solutions/voice-assistant" className="related-use-case-card">
               <div className="related-use-case-image">
-                <FaBrain className="related-use-case-image-icon" />
+                <FaMicrophone className="related-use-case-image-icon" />
               </div>
               <div className="related-use-case-content">
-                <h3 className="related-use-case-title">Predictive Diagnostics</h3>
+                <h3 className="related-use-case-title">Voice Assistant</h3>
                 <p className="related-use-case-description">
-                  Algorithms predicting disease onset and progression for earlier intervention and personalized treatment.
+                  Voice assistants helping providers document encounters, access information, and perform tasks hands-free.
                 </p>
                 <div className="related-use-case-link">
                   Learn More <FaArrowRight className="related-use-case-link-icon" />
@@ -272,14 +297,14 @@ const MedicalImagingUseCase = () => {
               </div>
             </Link>
 
-            <Link to="/solutions/genomic-analysis" className="related-use-case-card">
+            <Link to="/solutions/clinical-decision-support" className="related-use-case-card">
               <div className="related-use-case-image">
-                <FaDna className="related-use-case-image-icon" />
+                <FaUserMd className="related-use-case-image-icon" />
               </div>
               <div className="related-use-case-content">
-                <h3 className="related-use-case-title">Genomic Analysis</h3>
+                <h3 className="related-use-case-title">Clinical Decision Support</h3>
                 <p className="related-use-case-description">
-                  AI tools analyzing genomic data to identify markers, predict drug responses, and enable precision medicine.
+                  Systems providing evidence-based recommendations to clinicians at point of care.
                 </p>
                 <div className="related-use-case-link">
                   Learn More <FaArrowRight className="related-use-case-link-icon" />
@@ -287,14 +312,14 @@ const MedicalImagingUseCase = () => {
               </div>
             </Link>
 
-            <Link to="/solutions/patient-monitoring" className="related-use-case-card">
+            <Link to="/solutions/hospital-operations" className="related-use-case-card">
               <div className="related-use-case-image">
-                <FaHeartbeat className="related-use-case-image-icon" />
+                <FaHospital className="related-use-case-image-icon" />
               </div>
               <div className="related-use-case-content">
-                <h3 className="related-use-case-title">Remote Patient Monitoring</h3>
+                <h3 className="related-use-case-title">Hospital Operations Optimization</h3>
                 <p className="related-use-case-description">
-                  Systems for monitoring patient vital signs and health metrics with real-time alerts for critical changes.
+                  Solutions optimizing hospital workflows, resource allocation, and capacity management.
                 </p>
                 <div className="related-use-case-link">
                   Learn More <FaArrowRight className="related-use-case-link-icon" />
@@ -309,4 +334,4 @@ const MedicalImagingUseCase = () => {
   );
 };
 
-export default MedicalImagingUseCase;
+export default PriorAuthorizationUseCase;

@@ -39,7 +39,7 @@ const DarkModeToggle = () => {
       setIsDarkMode(storedTheme === 'true');
       applyTheme(storedTheme === 'true');
     }
-  }, []);
+  }, [isDarkMode]); // Added isDarkMode as a dependency
 
   const toggleTheme = () => {
     const newMode = !isDarkMode;
@@ -55,14 +55,40 @@ const DarkModeToggle = () => {
       // Dark theme (default)
       root.style.setProperty('--background-dark', '#0A1A2F');
       root.style.setProperty('--background-darker', '#061325');
+      root.style.setProperty('--background-light', '#F8F9FA');
       root.style.setProperty('--text-primary', '#F8F9FA');
       root.style.setProperty('--text-secondary', '#B8C4D0');
+      root.style.setProperty('--text-dark', '#0A1A2F');
+      root.style.setProperty('--wave-dark-blue', '#061325');
+      root.style.setProperty('--wave-medium-blue', '#0A1A2F');
+      root.style.setProperty('--wave-light-blue', '#1E3A5F');
     } else {
-      // Light theme
-      root.style.setProperty('--background-dark', '#F8F9FA');
-      root.style.setProperty('--background-darker', '#E9ECEF');
+      // Enhanced Light theme
+      root.style.setProperty('--background-dark', '#FFFFFF');
+      root.style.setProperty('--background-darker', '#F0F4F8');
+      root.style.setProperty('--background-light', '#E9ECEF');
       root.style.setProperty('--text-primary', '#0A1A2F');
       root.style.setProperty('--text-secondary', '#495057');
+      root.style.setProperty('--text-dark', '#F8F9FA');
+      root.style.setProperty('--wave-dark-blue', '#F0F4F8');
+      root.style.setProperty('--wave-medium-blue', '#E1E8EF');
+      root.style.setProperty('--wave-light-blue', '#D1DFEC');
+      
+      // Add box shadow to cards in light mode for better definition
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        card.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.08)';
+        card.style.border = '1px solid rgba(0, 0, 0, 0.05)';
+      });
+    }
+    
+    // Apply theme class to body for additional CSS targeting
+    if (dark) {
+      document.body.classList.add('dark-theme');
+      document.body.classList.remove('light-theme');
+    } else {
+      document.body.classList.add('light-theme');
+      document.body.classList.remove('dark-theme');
     }
   };
 

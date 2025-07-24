@@ -182,7 +182,7 @@ const Home = () => {
                 Transforming Business Through <GradientText fontWeight="700">AI Innovation</GradientText>
               </h1>
               <p className="hero-subtitle">
-                Leverage the power of artificial intelligence to drive growth, efficiency, and competitive advantage for your organization.
+                Leverage AI to drive growth, efficiency, and competitive advantage for your business.
               </p>
               <div className="hero-buttons">
                 <Button to="/contact" variant="primary" size="large">Get Started</Button>
@@ -223,29 +223,149 @@ const Home = () => {
                   </svg>
                 </NeuralConnections>
                 
-                {/* Central AI brain with glow effect */}
+                {/* Advanced AI visualization with improved lighting */}
                 <CentralIcon>
-                  <IconGlow />
+                  {/* Enhanced glow effect without dark strips */}
+                  <IconGlow style={{
+                    width: '350px',
+                    height: '350px',
+                    background: 'radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(0, 200, 83, 0.25) 30%, rgba(0, 149, 255, 0.15) 60%, rgba(255, 120, 70, 0) 80%)',
+                    filter: 'blur(15px)'
+                  }} />
+                  
                   <motion.div
                     animate={{
-                      scale: [1, 1.05, 1],
-                      rotate: [0, 5, 0, -5, 0]
+                      scale: [1, 1.03, 1],
                     }}
                     transition={{
-                      duration: 5,
+                      duration: 4,
                       repeat: Infinity,
                       repeatType: "reverse"
                     }}
+                    style={{ position: 'relative' }}
                   >
-                    <FaBrain style={{
-                      fontSize: '120px',
-                      color: 'white',
-                      filter: 'drop-shadow(0 0 15px rgba(255, 120, 70, 0.8))',
-                    }} />
+                    {/* 3D Holographic AI Visualization */}
+                    <div style={{ position: 'relative' }}>
+                      {/* Outer ring with improved lighting */}
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                        style={{
+                          position: 'absolute',
+                          width: '200px',
+                          height: '200px',
+                          borderRadius: '50%',
+                          border: '2px solid rgba(255, 255, 255, 0.7)',
+                          boxShadow: '0 0 20px rgba(0, 200, 83, 0.5), inset 0 0 20px rgba(0, 200, 83, 0.3)',
+                          top: '50%',
+                          left: '50%',
+                          transform: 'translate(-50%, -50%)',
+                          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%)'
+                        }}
+                      />
+                      
+                      {/* Middle ring with improved lighting */}
+                      <motion.div
+                        animate={{ rotate: -360 }}
+                        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                        style={{
+                          position: 'absolute',
+                          width: '150px',
+                          height: '150px',
+                          borderRadius: '50%',
+                          border: '2px solid rgba(255, 255, 255, 0.7)',
+                          boxShadow: '0 0 15px rgba(0, 149, 255, 0.5), inset 0 0 15px rgba(0, 149, 255, 0.3)',
+                          top: '50%',
+                          left: '50%',
+                          transform: 'translate(-50%, -50%) rotate(45deg)',
+                          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%)'
+                        }}
+                      />
+                      
+                      {/* Inner ring with improved lighting */}
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                        style={{
+                          position: 'absolute',
+                          width: '100px',
+                          height: '100px',
+                          borderRadius: '50%',
+                          border: '2px solid rgba(255, 255, 255, 0.7)',
+                          boxShadow: '0 0 15px rgba(255, 120, 70, 0.5), inset 0 0 15px rgba(255, 120, 70, 0.3)',
+                          top: '50%',
+                          left: '50%',
+                          transform: 'translate(-50%, -50%) rotate(30deg)',
+                        }}
+                      />
+                      
+                      {/* Core element with improved lighting */}
+                      <motion.div
+                        animate={{
+                          boxShadow: [
+                            '0 0 25px rgba(255, 255, 255, 0.9), 0 0 40px rgba(0, 200, 83, 0.8)',
+                            '0 0 25px rgba(255, 255, 255, 0.9), 0 0 40px rgba(0, 149, 255, 0.8)',
+                            '0 0 25px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 120, 70, 0.8)',
+                            '0 0 25px rgba(255, 255, 255, 0.9), 0 0 40px rgba(0, 200, 83, 0.8)'
+                          ]
+                        }}
+                        transition={{ duration: 5, repeat: Infinity }}
+                        style={{
+                          position: 'absolute',
+                          width: '70px',
+                          height: '70px',
+                          borderRadius: '50%',
+                          background: 'radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(230, 230, 230, 0.9) 100%)',
+                          top: '50%',
+                          left: '50%',
+                          transform: 'translate(-50%, -50%)',
+                          zIndex: 2
+                        }}
+                      />
+                      
+                      {/* Pulsing dots with improved lighting */}
+                      {[...Array(12)].map((_, i) => (
+                        <motion.div
+                          key={i}
+                          animate={{
+                            opacity: [0.4, 1, 0.4],
+                            scale: [0.8, 1.2, 0.8]
+                          }}
+                          transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            delay: i * 0.25
+                          }}
+                          style={{
+                            position: 'absolute',
+                            width: '12px',
+                            height: '12px',
+                            borderRadius: '50%',
+                            background: i % 3 === 0 ? 'rgba(0, 200, 83, 0.9)' :
+                                       i % 3 === 1 ? 'rgba(0, 149, 255, 0.9)' :
+                                       'rgba(255, 120, 70, 0.9)',
+                            boxShadow: i % 3 === 0 ? '0 0 10px rgba(0, 200, 83, 0.8)' :
+                                       i % 3 === 1 ? '0 0 10px rgba(0, 149, 255, 0.8)' :
+                                       '0 0 10px rgba(255, 120, 70, 0.8)',
+                            top: `${50 + 45 * Math.sin(i * (Math.PI / 6))}%`,
+                            left: `${50 + 45 * Math.cos(i * (Math.PI / 6))}%`,
+                            transform: 'translate(-50%, -50%)',
+                            zIndex: 3
+                          }}
+                        />
+                      ))}
+                    </div>
                   </motion.div>
                   
-                  <TechLabel>
-                    Next-Gen AI Technology
+                  <TechLabel style={{
+                    background: 'linear-gradient(90deg, rgba(0, 200, 83, 0.2), rgba(255, 255, 255, 0.15), rgba(0, 200, 83, 0.2))',
+                    borderLeft: '3px solid var(--primary-color)',
+                    borderRight: '3px solid var(--primary-color)',
+                    borderRadius: '30px',
+                    padding: '12px 25px',
+                    boxShadow: '0 0 20px rgba(0, 200, 83, 0.3)'
+                  }}>
+                    Advanced AI Ecosystem
                   </TechLabel>
                 </CentralIcon>
               </HeroImageContainer>
@@ -266,7 +386,7 @@ const Home = () => {
             >
               <h2 className="section-title">Our <GradientText>AI Capabilities</GradientText></h2>
               <p className="section-subtitle">
-                We offer a comprehensive suite of AI solutions designed to address your most complex business challenges.
+                AI solutions designed to address your complex business challenges.
               </p>
             </motion.div>
           </SectionHeader>
@@ -276,32 +396,32 @@ const Home = () => {
               {
                 icon: <FaRobot />,
                 title: "Conversational AI",
-                description: "Build advanced chatbots and virtual assistants that understand and respond to natural language queries with human-like interactions."
+                description: "Build chatbots and virtual assistants that understand and respond to natural language with human-like interactions."
               },
               {
                 icon: <FaCamera />,
                 title: "Multimodal AI",
-                description: "Combine text and image processing capabilities for image captioning, visual question answering, and comprehensive content understanding."
+                description: "Combine text and image processing for captioning, visual Q&A, and content understanding."
               },
               {
                 icon: <FaChartLine />,
                 title: "Predictive Analytics",
-                description: "Forecast trends, outcomes, or risks using historical data to enable proactive decision-making and strategic planning."
+                description: "Forecast trends and outcomes using historical data for proactive decision-making."
               },
               {
                 icon: <FaThumbsUp />,
                 title: "AI-Powered Recommendations",
-                description: "Deliver personalized suggestions for products, treatments, articles, and more based on user behavior and preferences."
+                description: "Deliver personalized suggestions based on user behavior and preferences."
               },
               {
                 icon: <FaFileAlt />,
                 title: "Document Intelligence",
-                description: "Extract information from documents using OCR, classify document types, and automatically process forms and paperwork."
+                description: "Extract information from documents, classify types, and automate form processing."
               },
               {
                 icon: <FaSearch />,
                 title: "Search and Retrieval (RAG)",
-                description: "Implement advanced search capabilities with retrieval-augmented generation to provide accurate, context-aware responses."
+                description: "Implement advanced search with retrieval-augmented generation for accurate responses."
               }
             ].map((feature, index) => (
               <motion.div
@@ -405,14 +525,14 @@ const Home = () => {
               >
                 <h2 className="solutions-title">Enterprise <GradientText>AI Solutions</GradientText></h2>
                 <p className="solutions-description">
-                  Our enterprise-grade AI solutions are designed to integrate seamlessly with your existing systems and processes, delivering immediate value and long-term competitive advantage.
+                  Our AI solutions integrate with your existing systems, delivering immediate value and long-term competitive advantage.
                 </p>
                 <ul className="solutions-list">
                   {[
-                    "Custom AI strategy aligned with your business objectives",
-                    "End-to-end implementation from concept to deployment",
-                    "Scalable architecture that grows with your business",
-                    "Continuous monitoring and optimization for peak performance"
+                    "Custom AI strategy for your business goals",
+                    "End-to-end implementation and deployment",
+                    "Scalable architecture for growth",
+                    "Continuous monitoring and optimization"
                   ].map((item, index) => (
                     <motion.li
                       key={index}
@@ -448,7 +568,7 @@ const Home = () => {
             >
               <h2 className="section-title">Client <GradientText>Success Stories</GradientText></h2>
               <p className="section-subtitle">
-                See how our AI solutions have transformed businesses across industries.
+                How our AI solutions transform businesses across industries.
               </p>
             </motion.div>
           </SectionHeader>
@@ -456,17 +576,17 @@ const Home = () => {
           <TestimonialsGrid>
             {[
               {
-                content: "The predictive analytics solution implemented by AI Solutions has revolutionized our inventory management, reducing stockouts by 35% and improving customer satisfaction scores.",
+                content: "The predictive analytics solution revolutionized our inventory management, reducing stockouts by 35% and improving customer satisfaction.",
                 author: "Sarah Johnson",
                 title: "CTO, Global Retail Inc."
               },
               {
-                content: "Their computer vision system has transformed our quality control process, identifying defects with 99.8% accuracy and reducing manual inspection costs by over 60%.",
+                content: "Their computer vision system transformed our quality control, identifying defects with 99.8% accuracy and reducing costs by 60%.",
                 author: "Michael Chen",
                 title: "Operations Director, Precision Manufacturing"
               },
               {
-                content: "The NLP solution developed by AI Solutions has enabled us to analyze customer feedback at scale, uncovering insights that have directly influenced our product roadmap.",
+                content: "The NLP solution enabled us to analyze customer feedback at scale, uncovering insights that directly influenced our product roadmap.",
                 author: "Jessica Rodriguez",
                 title: "VP of Product, SaaS Innovations"
               }
@@ -514,9 +634,9 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <h2 className="cta-title">Ready to <GradientText>Transform</GradientText> Your Business with AI?</h2>
+              <h2 className="cta-title">Ready to <GradientText>Transform</GradientText> Your Business?</h2>
               <p className="cta-description">
-                Contact us today to schedule a consultation with our AI experts and discover how our solutions can drive growth and innovation for your organization.
+                Contact us to schedule a consultation and discover how our AI solutions can drive growth and innovation.
               </p>
               <Button to="/contact" variant="primary" size="large">Get Started</Button>
             </motion.div>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { FaBuilding, FaGlobeAmericas, FaUsers } from 'react-icons/fa';
 import WaveBackground from '../components/ui/WaveBackground';
 import GradientText from '../components/ui/GradientText';
 import Card from '../components/ui/Card';
@@ -62,32 +61,15 @@ const HistoryContent = styled.div`
 
 const HistoryImage = styled.div`
   height: 400px;
-  background: linear-gradient(135deg, var(--wave-dark-blue) 0%, var(--wave-medium-blue) 70%, var(--wave-light-blue) 100%);
+  background: ${props => props.imageUrl ? `url(${props.imageUrl})` : 'linear-gradient(135deg, var(--wave-dark-blue) 0%, var(--wave-medium-blue) 70%, var(--wave-light-blue) 100%)'};
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius);
   position: relative;
   overflow: hidden;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
-    opacity: 0.3;
-  }
-`;
-
-const HistoryIcon = styled.div`
-  font-size: 8rem;
-  color: var(--primary-color);
-  position: relative;
-  z-index: 1;
 `;
 
 const LeadershipSection = styled.section`
@@ -111,25 +93,15 @@ const LeadershipGrid = styled.div`
 
 const LeaderImage = styled.div`
   height: 300px;
-  background: linear-gradient(135deg, var(--wave-dark-blue) 0%, var(--wave-medium-blue) 70%, var(--wave-light-blue) 100%);
+  background: ${props => props.imageUrl ? `url(${props.imageUrl})` : 'linear-gradient(135deg, var(--wave-dark-blue) 0%, var(--wave-medium-blue) 70%, var(--wave-light-blue) 100%)'};
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   position: relative;
   overflow: hidden;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 20px 20px;
-    opacity: 0.3;
-  }
 `;
 
 const LeaderContent = styled.div`
@@ -211,11 +183,7 @@ const About = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <HistoryImage>
-                <HistoryIcon>
-                  <FaBuilding />
-                </HistoryIcon>
-              </HistoryImage>
+              <HistoryImage imageUrl="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" />
             </motion.div>
             
             <motion.div
@@ -261,17 +229,20 @@ const About = () => {
               {
                 name: "Siddharth Bhayani",
                 title: "CEO, Founder",
-                image: <FaUsers />
+                imageUrl: "/images/leadership/siddharth_bhayani.png",
+                bio: "With over 15 years of experience in healthcare technology, Siddharth founded Neutrino Tech Systems with a vision to transform healthcare through innovative AI solutions. His leadership has driven the company's growth and established its reputation for excellence in the industry."
               },
               {
                 name: "Aakash Shroff",
                 title: "CTO, Co-Founder, Director",
-                image: <FaUsers />
+                imageUrl: "/images/leadership/aakash_shroff.png",
+                bio: "Aakash brings deep technical expertise in AI, machine learning, and healthcare informatics. As CTO, he leads the development of Neutrino's cutting-edge solutions, ensuring they leverage the latest advancements in technology while maintaining the highest standards of quality and security."
               },
               {
                 name: "Krupali Sheth",
                 title: "VP- Business Development & Customer Success",
-                image: <FaUsers />
+                imageUrl: "/images/leadership/krupali_sheth.png",
+                bio: "Krupali leads our business development and customer success initiatives, focusing on building strong relationships with healthcare organizations and ensuring our solutions deliver measurable value. Her client-centric approach has been instrumental in driving adoption and satisfaction among our customers."
               }
             ].map((leader, index) => (
               <motion.div
@@ -282,12 +253,13 @@ const About = () => {
                 viewport={{ once: true, margin: "-100px" }}
               >
                 <Card hoverable>
-                  <LeaderImage>
-                    {leader.image}
-                  </LeaderImage>
+                  <LeaderImage imageUrl={leader.imageUrl} />
                   <LeaderContent>
                     <LeaderName>{leader.name}</LeaderName>
                     <LeaderTitle>{leader.title}</LeaderTitle>
+                    <p style={{ fontSize: '1.4rem', lineHeight: '1.6', color: 'var(--text-secondary)', marginTop: '1rem' }}>
+                      {leader.bio}
+                    </p>
                   </LeaderContent>
                 </Card>
               </motion.div>
@@ -311,8 +283,16 @@ const About = () => {
                 Come, <GradientText>Join Us</GradientText>
               </h2>
               <p className="join-us-description">
-                Neutrino Tech Systems in USA
+                Join our team of innovators at Neutrino Tech Systems and be part of a company that's transforming healthcare through AI. We offer a collaborative environment where creativity thrives, professional growth is encouraged, and your work makes a meaningful impact on patient care worldwide.
               </p>
+              <p className="join-us-description" style={{ marginTop: '2rem' }}>
+                Based in Texas, USA, with global offices in India and Costa Rica, we provide opportunities to work with cutting-edge technologies and collaborate with healthcare organizations around the world. Our diverse and inclusive culture values different perspectives and fosters innovation.
+              </p>
+              <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+                <Card as="a" href="/contact" style={{ display: 'inline-block', padding: '1.5rem 3rem', textDecoration: 'none', background: 'var(--primary-color)', color: 'var(--text-dark)', borderRadius: 'var(--border-radius)', fontWeight: '600', fontSize: '1.6rem', transition: 'all 0.3s ease' }}>
+                  View Open Positions
+                </Card>
+              </div>
             </motion.div>
           </Container>
         </WaveBackground>
