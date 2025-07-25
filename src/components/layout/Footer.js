@@ -13,12 +13,8 @@ const Footer = () => {
           <div className="footer-column">
             <div className="footer-logo-container">
               <div className="footer-logo-image">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="50" height="50">
-                  <path d="M0 0 L200 200 L0 400 Z" fill="#FF7843"/>
-                  <path d="M200 200 L400 0 L400 400 Z" fill="#909090"/>
-                </svg>
+                <img src="/images/neutrino logo 2023  white.png" alt="Neutrino Tech Systems Logo" width="180" height="180" />
               </div>
-              <h2 className="footer-logo">Neutrino Tech Systems</h2>
             </div>
             <p className="footer-text">
               Transforming businesses through innovative AI solutions. We help organizations leverage the power of artificial intelligence to drive growth, efficiency, and competitive advantage.

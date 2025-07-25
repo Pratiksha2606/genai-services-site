@@ -30,18 +30,18 @@
 .footer-logo-container {
   display: flex;
   align-items: center;
-  margin-bottom: 2rem;
+  justify-content: center;
+  margin-bottom: 3rem;
 }
 .footer-logo-image {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 1rem;
+  transition: transform 0.3s ease;
 }
 
-.footer-logo-image svg {
-  width: 50px;
-  height: 50px;
+.footer-logo-container:hover .footer-logo-image {
+  transform: scale(1.05);
 }
 
 .footer-logo {

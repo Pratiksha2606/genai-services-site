@@ -44,7 +44,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 1rem;
+  padding: 5px 0;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-image {
+  transform: scale(1.05);
 }
 
 .logo-text {

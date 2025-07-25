@@ -37,12 +37,8 @@ const Navbar = () => {
         <div className="logo-container">
           <Link to="/" className="logo">
             <div className="logo-image">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="30" height="30">
-                <path d="M0 0 L200 200 L0 400 Z" fill="#FF7843"/>
-                <path d="M200 200 L400 0 L400 400 Z" fill="#909090"/>
-              </svg>
+              <img src="/images/neutrino logo 2023  white.png" alt="Neutrino Tech Systems Logo" width="120" height="120" />
             </div>
-            <span className="logo-text">Neutrino Tech Systems</span>
           </Link>
         </div>
 
