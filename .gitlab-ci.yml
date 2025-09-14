@@ -1,7 +1,7 @@
 # GitLab CI/CD Pipeline for EKS Deployment
 
 variables:
-  AWS_REGION: AWSRegion.US_EAST_1
+  AWS_REGION: us-east-1
   ECR_REPOSITORY: genai-services-site-ecr
   EKS_CLUSTER: genai-services-site-cluster
   NAMESPACE: default
